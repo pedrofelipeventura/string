@@ -1,0 +1,28 @@
+#include <stdio.h>
+#define TAM 20
+
+//CODIGO DA ERRO DESSA FORM POR CAUSA QUE  ENTER È LIDO COMO CARACTERE
+//GETCHAR RESOLVE OS PROBLEMAS
+
+int main(){
+
+    char str[TAM];
+
+   // for(int k=0; k<TAM; k++){
+   //     scanf("%c",&str[k]);// str[k] = getchar();
+   //     getchar(); //RESOLVE OS PROBLEMAS DO CODIGO
+   // }
+
+    scanf("%s",str); //DGITE A STRING
+
+    puts("String:");
+    //for(int k=0; k<TAM; k++){
+    int k =0;
+    while(str[k]!='\0'){
+        printf("%c",str[k]);
+        k++;
+    }
+    printf("\n");
+
+    return 0;
+}
