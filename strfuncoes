@@ -1,0 +1,24 @@
+//strlen/strcmp/strcat
+
+#include <stdio.h>
+#define TAM 50
+
+//CODIGO DA ERRO DESSA FORM POR CAUSA QUE  ENTER È LIDO COMO CARACTERE
+//GETCHAR RESOLVE OS PROBLEMAS
+
+int main(){
+
+    char str1[TAM], str2[TAM];
+
+    printf("String 1.\n");
+    fgets(str1, TAM, stdin);
+    printf("String 2.\n");
+    fgets(str2, TAM, stdin);
+
+    
+    printf("\n");
+
+    puts(str);
+
+    return 0;
+}
