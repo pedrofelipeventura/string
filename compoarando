@@ -1,0 +1,33 @@
+//Comparando se duas strings são iguais sem usar o strlen
+
+#include <stdio.h>
+#define TAM 50
+
+int main(){
+
+    char str[TAM], str2[TAM];
+
+    puts("Digite a string 1:\n");
+    fgets(str, TAM, stdin);
+    puts("Digite a string 2:\n");
+    fgets(str2, TAM, stdin);
+
+    int i = 0;
+    int iguais = 1;
+
+    while (str[i] != '\0' || str2[i] != '\0') { //O i representa a posição de cada caractere, como edstá em um laço 
+        if (str[i] != str2[i]) {                //o i++ vai de caractere por caractere verificar se eles são iguais ou não
+            iguais = 0;
+            break;
+        }
+        i++;
+    }
+
+    if (iguais) {
+        printf("As strings são iguais.\n");
+    } else {
+        printf("As strings são diferentes.\n");
+    }
+
+    return 0;
+}
