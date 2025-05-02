@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+#define TAM 10 
+#define MX 10
+//VERSÃO DANIEL
+int main(){
+
+    int vetor[TAM] = {0};
+    int freq[MX] = {0};
+
+    srand(time(NULL));
+    for(int k =0; k<TAM; k++){
+        vetor[k] = rand() % MX;
+    }
+
+    //imprimit
+    for(int k =0; k<TAM; k++){
+       printf("%d",vetor[k]);
+    }
+    printf("\n");
+    //contar freq
+    for(int k =0; k<TAM; k++){
+        freq[vetor[k]]++;
+    }
+    //imprimit freq
+    for(int k =0; k<TAM; k++){
+        printf("%d",freq[k]);
+    }
+    printf("\n");
+    //somatorio
+    int somatorio = 0;
+    for(int k =0; k<MX; k++){
+        somatorio += freq[k];
+    }
+
+    float freqnorm[MX];
+    for(int k =0; k<TAM; k++){
+        freqnorm[k] = (float)freq[k]/somatorio;
+    }
+    //imprimit freq
+    for(int k =0; k<TAM; k++){
+        printf("%f\n",freqnorm[k]);
+    }    
+    printf("\n");
+    
+    return 0;
+}
