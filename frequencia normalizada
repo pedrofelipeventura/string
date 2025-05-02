@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <time.h>
+
+#define TAM 500
+#define MX 10
+
+int main(){
+    srand(time(NULL));
+
+    int vetor[TAM];
+    int freq[MX] = {0};  // Inicializa todas as posições de freq com 0
+    float freqnormal[MX];  // Vetor para armazenar a frequência normalizada
+
+    // Preenche o vetor com números aleatórios e conta as ocorrências
+    for(int i = 0; i < TAM; i++){
+        vetor[i] = rand() % MX;
+        freq[vetor[i]]++;  // Incrementa a contagem para o número gerado
+    }
+
+    // Calcula o somatório das frequências
+    int somatorio_freq = 0;
+    for(int i = 0; i < MX; i++){
+        somatorio_freq += freq[i];
+    }
+
+    // Calcula a frequência normalizada (freq / somatório de freq)
+    for(int i = 0; i < MX; i++){
+        if (somatorio_freq != 0) {  
+            freqnormal[i] = (float)freq[i] / somatorio_freq;
+        } else {
+            freqnormal[i] = 0.0f;
+        }
+    }
+
+    // Exibe o vetor gerado
+    printf("Vetor gerado: ");
+    for(int i = 0; i < TAM; i++){
+        printf("%d ", vetor[i]);
+    }
+    printf("\n");
+
+    printf("\nFrequência e Frequência Normalizada de cada número de 0 a 9:\n");
+    for(int i = 0; i < MX; i++){
+        printf("Número %d: %d vez(es), Frequência Normalizada: %.4f\n", i, freq[i], freqnormal[i]);
+    }
+
+    return 0;
+}
